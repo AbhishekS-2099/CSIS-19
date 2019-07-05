@@ -6,14 +6,24 @@ public class event {
     private  String eventName;
     private String eventDate;
     private String eventType;
+    private String eventLocation;
     private String key;
 
-    public event(String eventDate, String eventName, String eventType){
+    public event(String eventDate, String eventName, String eventType,String eventLocation){
         this.eventDate=eventDate;
         this.eventName=eventName;
         this.eventType=eventType;
+        this.eventLocation=eventLocation;
     }
     public event(){}
+
+    public String getEventLocation() {
+        return eventLocation;
+    }
+
+    public void setEventLocation(String eventLocation) {
+        this.eventLocation = eventLocation;
+    }
 
     public String getEventName() {
         return eventName;

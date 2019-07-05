@@ -55,9 +55,9 @@ public class listViewAdapter extends BaseAdapter {
         holder.eventName.setText(listEvent.get(position).getEventName());
         holder.eventDate.setText(listEvent.get(position).getEventDate());
         holder.eventType.setText(listEvent.get(position).getEventType() + "");
-        holder.eventLocation.setText("eventLocation");
-        holder.eventImageIcon.setImageResource(R.drawable.common_google_signin_btn_icon_dark);
-        holder.eventImage.setImageResource(R.drawable.common_google_signin_btn_icon_light);
+        holder.eventLocation.setText(listEvent.get(position).getEventLocation());
+        holder.eventImageIcon.setImageResource(R.drawable.baseline_location_on_black_18dp);
+        holder.eventImage.setImageResource(R.drawable.baseline_event_black_48dp);
         return convertView;
     }
     class ViewHolder{
