@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CSIS \'19</string>
+    <string name="eventimage">eventImage</string>
 </resources>

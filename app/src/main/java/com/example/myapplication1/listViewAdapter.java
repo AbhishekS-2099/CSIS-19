@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -43,7 +44,9 @@ public class listViewAdapter extends BaseAdapter {
             holder.eventName = convertView.findViewById(R.id.eventName);
             holder.eventDate = convertView.findViewById(R.id.eventDate);
             holder.eventType = convertView.findViewById(R.id.eventType);
-
+            holder.eventImage = convertView.findViewById(R.id.eventImage);
+            holder.eventLocation = convertView.findViewById(R.id.eventLocation);
+            holder.eventImageIcon = convertView.findViewById(R.id.eventImageIcon);
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder)convertView.getTag();
@@ -52,13 +55,18 @@ public class listViewAdapter extends BaseAdapter {
         holder.eventName.setText(listEvent.get(position).getEventName());
         holder.eventDate.setText(listEvent.get(position).getEventDate());
         holder.eventType.setText(listEvent.get(position).getEventType() + "");
-
+        holder.eventLocation.setText("eventLocation");
+        holder.eventImageIcon.setImageResource(R.drawable.common_google_signin_btn_icon_dark);
+        holder.eventImage.setImageResource(R.drawable.common_google_signin_btn_icon_light);
         return convertView;
     }
     class ViewHolder{
         TextView eventName;
         TextView eventDate;
         TextView eventType;
+        ImageView eventImage;
+        TextView eventLocation;
+        ImageView eventImageIcon;
     }
 
 }
