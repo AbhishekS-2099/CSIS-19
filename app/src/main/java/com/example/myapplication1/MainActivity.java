@@ -3,6 +3,7 @@ package com.example.myapplication1;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private listViewAdapter listViewAdapter;
     private List<event> listEvent = new ArrayList<>();
-
+    public Toolbar mToolbar;
     private ProgressBar progressBar;
 
     @Override
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initUI(){
         Log.d("InitUI","UI initializing");
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
         progressBar = findViewById(R.id.progressBar);
         fab = findViewById(R.id.fab);
         listView = findViewById(R.id.listView);
