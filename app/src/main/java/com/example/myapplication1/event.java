@@ -13,6 +13,7 @@ public class event {
         this.eventName=eventName;
         this.eventType=eventType;
     }
+    public event(){}
 
     public String getEventName() {
         return eventName;

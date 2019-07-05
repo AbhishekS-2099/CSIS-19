@@ -3,6 +3,7 @@ package com.example.myapplication1;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
@@ -34,7 +35,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference databaseReference;
-
+    private FirebaseDatabase mDatabase;
     private FloatingActionButton fab;
     private ListView listView;
     private listViewAdapter listViewAdapter;
@@ -47,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance();
+        databaseReference=mDatabase.getReference();
         initUI();
         setListViewAdapter();
-
         addSingleEventListener();
         addChildEventListener();
 
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initUI(){
+        Log.d("InitUI","UI initializing");
         progressBar = findViewById(R.id.progressBar);
         fab = findViewById(R.id.fab);
         listView = findViewById(R.id.listView);
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private void setListViewAdapter(){
         listViewAdapter = new listViewAdapter(this, listEvent);
         listView.setAdapter(listViewAdapter);
+        Log.d("setListViewAdapter","SetupListViewAdapter");
     }
 
     private void addChildEventListener() {
@@ -76,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 event event = dataSnapshot.getValue(event.class);
+                Log.d("classEventSnapshot",dataSnapshot.toString());
+                Log.d("classEvent",dataSnapshot.child("eventName").toString());
+                Log.d("classEventActual",dataSnapshot.getValue(event.class).getEventName().toString());
                 if(event != null){
                     event.setKey(dataSnapshot.getKey());
                     listEvent.add(dataSnapshot.getValue(event.class));
@@ -85,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 event event = dataSnapshot.getValue(event.class);
+                Log.d("classAbhishek",dataSnapshot.toString());
                 if(event != null){
                     String key = dataSnapshot.getKey();
                     for(int i=0;i<listEvent.size();i++){
