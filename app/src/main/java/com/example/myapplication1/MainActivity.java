@@ -92,7 +92,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d("InitUI","UI initializing");
         mToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(mToolbar);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setIcon((R.drawable.ic_launcher));
+        getSupportActionBar().setTitle("CSIS 19");
         progressBar = findViewById(R.id.progressBar);
         fab = findViewById(R.id.fab);
         listView = findViewById(R.id.listView);
