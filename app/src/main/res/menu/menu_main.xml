@@ -6,7 +6,7 @@
 
     <item
         android:id="@+id/action_favorite"
-        android:orderInCategory="300"
+        android:orderInCategory="1"
         android:title="User"
         android:icon="@drawable/baseline_menu_black_18dp"
         app:showAsAction="ifRoom"></item>

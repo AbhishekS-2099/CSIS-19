@@ -1,28 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.example.myapplication1.MainActivity">
 
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?actionBarSize"-->
+        <!--android:background="?colorPrimary"-->
+        <!--style="@style/HeaderBar"-->
+        <!--android:fitsSystemWindows="true">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/icon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:src="@drawable/ic_launcher"-->
+            <!--android:padding="7dp" />-->
+    <!--</android.support.v7.widget.Toolbar>-->
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="?colorPrimary"
+        android:layout_height="?attr/actionBarSize"
         style="@style/HeaderBar"
-        android:fitsSystemWindows="true">
-
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher" />
-    </android.support.v7.widget.Toolbar>
-
+        android:background="?colorPrimary"
+        android:elevation="4dp"
+        />
+    <!--app:theme="@style/ActionBarThemeOverlay"-->
+    <!--app:popupTheme="@style/ActionBarPopupThemeOverlay"-->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
