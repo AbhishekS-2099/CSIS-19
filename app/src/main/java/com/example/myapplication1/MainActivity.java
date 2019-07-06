@@ -11,7 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -30,7 +29,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     private DatabaseReference databaseReference;
     private FirebaseDatabase mDatabase;
@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ListView listView;
     private listViewAdapter listViewAdapter;
     private List<event> listEvent = new ArrayList<>();
-    public Toolbar mToolbar;
     private ProgressBar progressBar;
 
     @Override
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void initUI(){
         Log.d("InitUI","UI initializing");
-        mToolbar = findViewById(R.id.toolbar);
+        Toolbar mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
