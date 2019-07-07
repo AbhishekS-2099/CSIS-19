@@ -45,6 +45,7 @@ public class listViewAdapter extends BaseAdapter {
             holder.eventDate = convertView.findViewById(R.id.eventDate);
             holder.eventType = convertView.findViewById(R.id.eventType);
             holder.eventImage = convertView.findViewById(R.id.eventImage);
+            //holder.eventTimeStart = convertView.findViewById(R.id.)
             holder.eventLocation = convertView.findViewById(R.id.eventLocation);
             holder.eventImageIcon = convertView.findViewById(R.id.eventImageIcon);
             convertView.setTag(holder);
@@ -67,6 +68,8 @@ public class listViewAdapter extends BaseAdapter {
         ImageView eventImage;
         TextView eventLocation;
         ImageView eventImageIcon;
+        //TextView eventTimeStart;
+        //TextView eventTimeEnd;
     }
 
 }

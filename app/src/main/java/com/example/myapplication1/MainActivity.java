@@ -31,10 +31,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private FloatingActionButton fab;
 
     private DatabaseReference databaseReference;
-    private FirebaseDatabase mDatabase;
-    private FloatingActionButton fab;
     private ListView listView;
     private listViewAdapter listViewAdapter;
     private List<event> listEvent = new ArrayList<>();
@@ -44,6 +43,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseDatabase mDatabase;
 
         mDatabase = FirebaseDatabase.getInstance();
         databaseReference=mDatabase.getReference();
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void initUI(){
-        Log.d("InitUI","UI initializing");
+//        Log.d("InitUI","UI initializing");
         Toolbar mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -73,12 +73,14 @@ public class MainActivity extends AppCompatActivity
         fab = findViewById(R.id.fab);
         listView = findViewById(R.id.listView);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -93,6 +95,7 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -117,7 +120,6 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -135,6 +137,7 @@ public class MainActivity extends AppCompatActivity
 
     private void addChildEventListener() {
         databaseReference.addChildEventListener(new ChildEventListener() {
+
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 event event = dataSnapshot.getValue(event.class);

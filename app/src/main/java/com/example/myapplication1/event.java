@@ -8,6 +8,8 @@ public class event {
     private String eventType;
     private String eventLocation;
     private String key;
+    private String eventTimeStart;
+    private String eventTimeEnd;
 
     public event(String eventDate, String eventName, String eventType,String eventLocation){
         this.eventDate=eventDate;
@@ -16,6 +18,22 @@ public class event {
         this.eventLocation=eventLocation;
     }
     public event(){}
+
+    public String getEventTimeStart() {
+        return eventTimeStart;
+    }
+
+    public void setEventTimeStart(String eventTimeStart) {
+        this.eventTimeStart = eventTimeStart;
+    }
+
+    public String getEventTimeEnd() {
+        return eventTimeEnd;
+    }
+
+    public void setEventTimeEnd(String eventTimeEnd) {
+        this.eventTimeEnd = eventTimeEnd;
+    }
 
     public String getEventLocation() {
         return eventLocation;
