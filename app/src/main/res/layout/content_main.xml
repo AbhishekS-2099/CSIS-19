@@ -22,11 +22,12 @@
     android:padding="10dp"
     android:src="@android:drawable/ic_input_add" />
 
-<ListView
-android:id="@+id/listView"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:paddingTop="70dp"/>
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="0dp"
+        android:visibility="visible" />
 
 <ProgressBar
 android:id="@+id/progressBar"
