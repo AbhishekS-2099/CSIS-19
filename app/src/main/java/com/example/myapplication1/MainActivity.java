@@ -1,5 +1,6 @@
 package com.example.myapplication1;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -192,16 +193,16 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-//    private void setListViewItemListener(){
-//        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+    private void setListViewItemListener(){
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
 //            Bundle bundle = new Bundle();
 //            bundle.putBoolean("edit", true);
 //            bundle.putParcelable("person", Parcels.wrap(listEvent.get(i)));
-//            Intent intent = new Intent(this, EditPersonActivity.class);
+            Intent intent = new Intent(this, .class);
 //            intent.putExtras(bundle);
-//            startActivity(intent);
-//        });
-//    }
+            startActivity(intent);
+        });
+    }
 
     //LONG CLICK LISTENER
 
