@@ -3,8 +3,8 @@
     <string name="eventimage">eventImage</string>
     <string name="drawerOpen">Open</string>
     <string name="drawerClosed">Closed</string>
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="snap">CSIS Snap</string>
+    <string name="maps">Directions</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>

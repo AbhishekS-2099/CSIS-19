@@ -193,16 +193,16 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    private void setListViewItemListener(){
-        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+    //private void setListViewItemListener(){
+      //  listView.setOnItemClickListener((adapterView, view, i, l) -> {
 //            Bundle bundle = new Bundle();
 //            bundle.putBoolean("edit", true);
 //            bundle.putParcelable("person", Parcels.wrap(listEvent.get(i)));
-            Intent intent = new Intent(this, .class);
+            //Intent intent = new Intent(this, .class);
 //            intent.putExtras(bundle);
-            startActivity(intent);
-        });
-    }
+            //startActivity(intent);
+     //   });
+    //}
 
     //LONG CLICK LISTENER
 
