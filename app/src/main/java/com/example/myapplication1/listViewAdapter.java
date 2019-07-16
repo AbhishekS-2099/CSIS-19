@@ -57,7 +57,7 @@ public class listViewAdapter extends BaseAdapter {
         holder.eventDate.setText(listEvent.get(position).getEventDate());
         holder.eventType.setText(listEvent.get(position).getEventType() + "");
         holder.eventLocation.setText(listEvent.get(position).getEventLocation());
-        holder.eventImageIcon.setImageResource(R.drawable.baseline_location_on_black_18dp);
+        holder.eventImageIcon.setImageResource(R.drawable.ic_location_on);
         holder.eventImage.setImageResource(R.drawable.baseline_event_black_48dp);
         return convertView;
     }
