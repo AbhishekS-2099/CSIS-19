@@ -1,6 +1,5 @@
 package com.example.myapplication1;
 
-import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -32,7 +31,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private FloatingActionButton fab;
 
     private DatabaseReference databaseReference;
     private ListView listView;
@@ -61,20 +59,22 @@ public class MainActivity extends AppCompatActivity
     private void initUI(){
 //        Log.d("InitUI","UI initializing");
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
+        progressBar = findViewById(R.id.progressBar);
+        listView = findViewById(R.id.listView);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, mToolbar, R.string.drawerOpen, R.string.drawerClosed);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        setSupportActionBar(mToolbar);
 
-        progressBar = findViewById(R.id.progressBar);
-        fab = findViewById(R.id.fab);
-        listView = findViewById(R.id.listView);
+
     }
-
+//This is for the menu on the navbar...the ... on the right top
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -103,8 +103,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            // Handle the camera action        } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
 
