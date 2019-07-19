@@ -1,7 +1,11 @@
 package com.example.myapplication1;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -37,7 +41,8 @@ public class MainActivity extends AppCompatActivity
     private listViewAdapter listViewAdapter;
     private List<event> listEvent = new ArrayList<>();
     private ProgressBar progressBar;
-
+    protected DrawerLayout drawer;
+    protected ActionBarDrawerToggle toggle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +51,17 @@ public class MainActivity extends AppCompatActivity
 
         mDatabase = FirebaseDatabase.getInstance();
         databaseReference=mDatabase.getReference();
+        Toolbar mToolbar = findViewById(R.id.toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        toggle = new ActionBarDrawerToggle(
+                this, drawer, mToolbar, R.string.drawerOpen, R.string.drawerClosed);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+//        setSupportActionBar(mToolbar);
+        mToolbar.setTitle("CSIS 19");
+
         initUI();
         setListViewAdapter();
         addSingleEventListener();
@@ -58,22 +74,8 @@ public class MainActivity extends AppCompatActivity
 
     private void initUI(){
 //        Log.d("InitUI","UI initializing");
-        Toolbar mToolbar = findViewById(R.id.toolbar);
         progressBar = findViewById(R.id.progressBar);
         listView = findViewById(R.id.listView);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, mToolbar, R.string.drawerOpen, R.string.drawerClosed);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-        setSupportActionBar(mToolbar);
-
-
-
     }
 //This is for the menu on the navbar...the ... on the right top
     @Override
@@ -100,28 +102,33 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+
+        Fragment fragment = null;
+
         int id = item.getItemId();
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_camera) {
             // Handle the camera action        } else if (id == R.id.nav_gallery) {
+        fragment = new cameraFragment();
 
+        } else if (id == R.id.nav_home) {
 
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_maps) {
 
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if(fragment !=null){
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction FragTrans = fragmentManager.beginTransaction();
+            FragTrans.replace(R.id.homeFrame,fragment);
+            FragTrans.commit();
+        }
+
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
