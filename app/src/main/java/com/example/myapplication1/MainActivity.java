@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(mToolbar);
 
 
+
     }
 //This is for the menu on the navbar...the ... on the right top
     @Override
@@ -101,11 +102,9 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         if (id == R.id.nav_home) {
             // Handle the camera action        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_tools) {
 

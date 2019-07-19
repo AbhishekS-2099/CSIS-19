@@ -10,7 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:src="@drawable/navbackground"/>
+        android:src="@drawable/csis19logo"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"/>
 
 </RelativeLayout>
 
