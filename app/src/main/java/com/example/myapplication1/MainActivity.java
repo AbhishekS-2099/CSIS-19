@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity
         mToolbar.setTitle("CSIS 19");
 
         initUI();
-        setListViewAdapter();
         addSingleEventListener();
 //        addChildEventListener();
         FragmentTransaction FragTrans = fragmentManager.beginTransaction();
@@ -78,7 +77,10 @@ public class MainActivity extends AppCompatActivity
 //        setListViewItemListener();
 //        setListViewLongClickListener();
     }
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
     private void initUI(){
 //        Log.d("InitUI","UI initializing");
         progressBar = findViewById(R.id.progressBar);
@@ -136,9 +138,6 @@ public class MainActivity extends AppCompatActivity
     public List getEventList(){
         return  this.listEvent;
     }
-    public listViewAdapter getListViewAdapter(){
-        return this.listViewAdapter;
-    }
 
     @Override
     public void onBackPressed() {
@@ -148,56 +147,8 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-    private void setListViewAdapter(){
-//        listViewAdapter = new listViewAdapter(this, listEvent);
-//        listView.setAdapter(listViewAdapter);
-        Log.d("setListViewAdapter","SetupListViewAdapter");
-    }
 
-//    private void addChildEventListener() {
-//        databaseReference.addChildEventListener(new ChildEventListener() {
-//
-//            @Override
-//            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-//                event event = dataSnapshot.getValue(event.class);
-//                Log.d("classEventSnapshot",dataSnapshot.toString());
-//                Log.d("classEvent",dataSnapshot.child("eventName").toString());
-//                Log.d("classEventActual",dataSnapshot.getValue(event.class).getEventName().toString());
-//                if(event != null){
-//                    event.setKey(dataSnapshot.getKey());
-//                    listEvent.add(dataSnapshot.getValue(event.class));
-//                    listViewAdapter.notifyDataSetChanged();
-//                }
-//            }
-//            @Override
-//            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-//                event event = dataSnapshot.getValue(event.class);
-//                Log.d("classAbhishek",dataSnapshot.toString());
-//                if(event != null){
-//                    String key = dataSnapshot.getKey();
-//                    for(int i=0;i<listEvent.size();i++){
-//                        event event1= listEvent.get(i);
-//                        if(event1.getKey().equals(key)){
-//                            listEvent.set(i, event);
-//                            listViewAdapter.notifyDataSetChanged();
-//                            return;
-//                        }
-//                    }
-//                }
-//            }
-//            @Override
-//            public void onChildRemoved(DataSnapshot dataSnapshot) {
-//                listEvent.remove(dataSnapshot.getValue(event.class));
-//                listViewAdapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {}
-//        });
-//    }
+
 
     private void addSingleEventListener(){
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
