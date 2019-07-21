@@ -13,14 +13,7 @@
     android:layout_height="match_parent"
     android:id="@+id/homeFrame">
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:visibility="visible"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="8dp"/>
+<!--listview here-->
 
 </FrameLayout>
     <android.support.design.widget.FloatingActionButton
