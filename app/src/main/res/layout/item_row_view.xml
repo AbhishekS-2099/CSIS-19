@@ -1,32 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+    <!--Check this link-->
+    <!--https://stackoverflow.com/questions/53219343/how-to-add-an-imageview-outside-and-to-the-left-of-a-card-->
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="@color/primary_light"
+    app:cardUseCompatPadding="true"
+    android:layout_marginStart="50dp"
+    >
+    <LinearLayout
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/speakerName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:padding="1dp"
-        android:textSize="20sp" />
+    android:id="@+id/speakerName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp"
+    android:textSize="20sp"
+        android:layout_marginStart="30dp"/>
 
     <TextView
-        android:id="@+id/speakerTopic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:padding="1dp"
-        android:textSize="15sp" />
+    android:id="@+id/speakerTopic"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp"
+    android:textSize="15sp"
+    android:layout_marginStart="30dp"/>
 
     <TextView
-        android:id="@+id/speakerBrief"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:padding="1dp"
-        android:textSize="12sp" />
+    android:id="@+id/speakerBrief"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp"
+    android:textSize="12sp"
+        android:layout_marginStart="30dp"/>
 
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+    <ImageView
+        android:src="@drawable/ic_launcher"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:elevation="12dp" />
+    </FrameLayout>
 </LinearLayout>
