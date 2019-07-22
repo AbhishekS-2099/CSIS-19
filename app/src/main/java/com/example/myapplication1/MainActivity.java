@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private DatabaseReference databaseReference;
-    protected ListView listView;
-    protected listViewAdapter listViewAdapter;
+//    protected ListView listView;
+//    protected listViewAdapter listViewAdapter;
     List<event> listEvent = new ArrayList<>();
     public FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_home) {
             fragment = new eventFragment();
         } else if (id == R.id.nav_maps) {
+            fragment = new speakerFragment();
 
         }
 
