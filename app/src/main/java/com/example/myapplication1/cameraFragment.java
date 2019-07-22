@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -19,6 +20,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.watermark.androidwm.WatermarkBuilder;
+import com.watermark.androidwm.bean.WatermarkText;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,11 +48,23 @@ public class cameraFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode== Activity.RESULT_OK){
             if(requestCode== REQUEST_IMAGE_CAPTURE){
+                WatermarkText watermarkText = new WatermarkText("CSIS '19")
+                        .setPositionX(0.5)
+                        .setPositionY(0.5)
+                        .setTextAlpha(100)
+                        .setTextColor(Color.WHITE)
+                        .setTextFont(R.font.raleway_light)
+                        .setTextShadow(0.1f, 5, 5, Color.BLUE);
+                WatermarkBuilder.create(getContext(),cameraImage)
+                        .loadWatermarkText(watermarkText)
+                        .getWatermark()
+                        .setToImageView(cameraImage);
 //                Bitmap capturedImage = (Bitmap) data.getExtras().get("data");
 //                cameraImage.setImageBitmap(capturedImage);
                 File imgFile = new  File(pictureFilePath);
                 if(imgFile.exists())            {
                     cameraImage.setImageURI(Uri.fromFile(imgFile));
+
                 }
             }
         }
