@@ -39,13 +39,24 @@ public class speakerFragment extends Fragment {
    }
    private void createSpeakerData(){
 
-      speaker speaker = new speaker("Speaker1","AI1","Hey im speaker1");
+      speaker speaker = new speaker("Shriram Vasudevan","IOT/AI","Innovation And You");
       speakerList.add(speaker);
-      speaker = new speaker("Speaker2","AI2","Hey im speaker2");
+      speaker = new speaker("Sreekutty O U","Country Ambassador, She love ","Kerala Startup Mission");
       speakerList.add(speaker);
-      speaker = new speaker("Speaker3","AI3","Hey im speaker3");
+      speaker = new speaker("Sobodh Gajare","5G","Chief Architect, CISCO");
       speakerList.add(speaker);
-      speaker = new speaker("Speaker4","AI4","Hey im speaker4");
+      speaker = new speaker("Gopi Krishnan","Machine Learning","Fullcontact Director, Tinkerhub");
+      speakerList.add(speaker);
+      speaker = new speaker("Anuj Dugal","Inovation Program Manager,Corporate Affairs","Intel India");
+      speakerList.add(speaker);
+      speaker = new speaker("Supriya V","Machine Learning","Data Science, EY");
+      speakerList.add(speaker);
+      speaker = new speaker("Shruti Sridharan","Business Intelligence","9X Certified Saleforce Developer");
+      speakerList.add(speaker);
+      speaker = new speaker("Moosa Mehar MP","Entrepreneurship","Co-Founder, TinkerHub Foundation");
+      speakerList.add(speaker);
+
+      speaker = new speaker("Radhakrishnan KG","","Founder/Director WebNamaste");
       speakerList.add(speaker);
       speakerAdapter.notifyDataSetChanged();
    }

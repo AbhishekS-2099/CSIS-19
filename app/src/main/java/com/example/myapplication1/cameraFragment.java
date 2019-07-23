@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -50,12 +49,12 @@ public class cameraFragment extends Fragment {
         if(resultCode== Activity.RESULT_OK){
             if(requestCode== REQUEST_IMAGE_CAPTURE){
                 WatermarkText watermarkText = new WatermarkText("CSIS '19")
-                        .setPositionX(0.5)
-                        .setPositionY(0.5)
+                        .setPositionX(0.9)
+                        .setPositionY(0.9)
                         .setTextAlpha(100)
                         .setTextColor(Color.WHITE)
                         .setTextFont(R.font.raleway_light)
-                        .setTextShadow(0.1f, 5, 5, Color.BLUE);
+                        .setTextShadow(0.1f, 5, 5, Color.BLACK);
 
 //                Bitmap capturedImage = (Bitmap) data.getExtras().get("data");
 //                cameraImage.setImageBitmap(capturedImage);
@@ -77,6 +76,7 @@ public class cameraFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         cameraImage = view.findViewById(R.id.cameraImage);
         Button cameraButton = view.findViewById(R.id.cameraButton);
+        cameraImage.setImageResource(R.drawable.camera_activity);//this may be the reason it crashes
 
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override

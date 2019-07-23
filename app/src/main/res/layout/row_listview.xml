@@ -24,17 +24,7 @@
     app:cardElevation="5dp"
     android:padding="10dp"
     app:cardBackgroundColor="@color/primary_text"
-    app:cardUseCompatPadding="true"
-    >
-<!--<LinearLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content">-->
-<!--<ImageView-->
-        <!--android:id="@+id/eventImage"-->
-        <!--android:layout_width="50dp"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_weight="1"-->
-        <!--android:contentDescription="@string/eventimage" />-->
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,7 +50,7 @@
                 android:layout_weight="1"
                 android:padding="5dip"
                 android:textColor="@color/icons"
-                android:textSize="12sp" />
+                android:textSize="12.5sp" />
             <ImageView
                 android:id="@+id/eventImageIcon"
                 android:layout_height="match_parent"
@@ -73,7 +63,7 @@
                 android:layout_weight="1"
                 android:textColor="@color/icons"
                 android:padding="3dip"
-                android:textSize="12sp" />
+                android:textSize="12.5sp" />
 
         </LinearLayout>
 
@@ -83,7 +73,7 @@
             android:layout_weight="1"
             android:textColor="@color/icons"
             android:padding="5dp"
-            android:textSize="12sp" />
+            android:textSize="12.5sp" />
 
     </LinearLayout>
 <!--</LinearLayout>-->

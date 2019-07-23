@@ -86,10 +86,10 @@ public class listViewAdapter extends BaseAdapter {
                 holder.eventImage.setImageResource(R.drawable.mobileapp);
                 break;
             case "WIC":
-                holder.eventImage.setImageResource(R.drawable.wic_holo);
+                holder.eventImage.setImageResource(R.drawable.wic);
                 break;
             case "TISP":
-                holder.eventImage.setImageResource(R.drawable.tech);
+                holder.eventImage.setImageResource(R.drawable.tisp);
                 break;
             case "IOT":
                 holder.eventImage.setImageResource(R.drawable.iot);
@@ -98,7 +98,7 @@ public class listViewAdapter extends BaseAdapter {
                 holder.eventImage.setImageResource(R.drawable.ai);
                 break;
             case "ML":
-                holder.eventImage.setImageResource(R.drawable.ml3);
+                holder.eventImage.setImageResource(R.drawable.ml4);
                 break;
             case "Entrepreneurship":
                 holder.eventImage.setImageResource(R.drawable.entrepreneur);
