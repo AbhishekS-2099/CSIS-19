@@ -1,6 +1,7 @@
 package com.example.myapplication1;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity
 //    protected listViewAdapter listViewAdapter;
     List<event> listEvent = new ArrayList<>();
     public FragmentManager fragmentManager = getSupportFragmentManager();
-
+    private FloatingActionButton mapButton;
     private ProgressBar progressBar;
     protected DrawerLayout drawer;
     protected ActionBarDrawerToggle toggle;
@@ -71,6 +72,16 @@ public class MainActivity extends AppCompatActivity
         Fragment eventFragment = new eventFragment();
         FragTrans.add(R.id.homeFrame,eventFragment,"EventActivity");
         FragTrans.commit();
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=MES+College+Kuttipuram");
+//        1600 Amphitheatre Parkway, Mountain+View, California
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
 
 
 //        setFabClickListener();
@@ -84,6 +95,7 @@ public class MainActivity extends AppCompatActivity
     private void initUI(){
 //        Log.d("InitUI","UI initializing");
         progressBar = findViewById(R.id.progressBar);
+        mapButton = findViewById(R.id.mapButton);
 //        listView = findViewById(R.id.listView);
     }
 //This is for the menu on the navbar...the ... on the right top
@@ -121,7 +133,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_home) {
             fragment = new eventFragment();
-        } else if (id == R.id.nav_maps) {
+        } else if (id == R.id.nav_speakers) {
             fragment = new speakerFragment();
 
         }

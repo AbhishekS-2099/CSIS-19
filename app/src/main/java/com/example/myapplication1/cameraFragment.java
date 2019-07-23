@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.watermark.androidwm.WatermarkBuilder;
+import com.watermark.androidwm.bean.WatermarkImage;
 import com.watermark.androidwm.bean.WatermarkText;
 
 import java.io.File;
@@ -55,15 +56,16 @@ public class cameraFragment extends Fragment {
                         .setTextColor(Color.WHITE)
                         .setTextFont(R.font.raleway_light)
                         .setTextShadow(0.1f, 5, 5, Color.BLUE);
-                WatermarkBuilder.create(getContext(),cameraImage)
-                        .loadWatermarkText(watermarkText)
-                        .getWatermark()
-                        .setToImageView(cameraImage);
+
 //                Bitmap capturedImage = (Bitmap) data.getExtras().get("data");
 //                cameraImage.setImageBitmap(capturedImage);
                 File imgFile = new  File(pictureFilePath);
                 if(imgFile.exists())            {
                     cameraImage.setImageURI(Uri.fromFile(imgFile));
+                    WatermarkBuilder.create(getContext(),cameraImage)
+                            .loadWatermarkText(watermarkText)
+                            .getWatermark()
+                            .setToImageView(cameraImage);
 
                 }
             }

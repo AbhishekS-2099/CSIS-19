@@ -58,7 +58,58 @@ public class listViewAdapter extends BaseAdapter {
         holder.eventType.setText(listEvent.get(position).getEventType() + "");
         holder.eventLocation.setText(listEvent.get(position).getEventLocation());
         holder.eventImageIcon.setImageResource(R.drawable.ic_location_on);
-        holder.eventImage.setImageResource(R.drawable.baseline_event_black_48dp);
+
+        String ET =listEvent.get(position).getEventType();
+        switch (ET){
+            case "Registration":
+                holder.eventImage.setImageResource(R.drawable.reg);
+                break;
+            case "Inauguration":
+                holder.eventImage.setImageResource(R.drawable.inauguration);
+                break;
+            case "General":
+                holder.eventImage.setImageResource(R.drawable.general);
+                break;
+            case "Food":
+                holder.eventImage.setImageResource(R.drawable.food);
+                break;
+            case "Cultural":
+                holder.eventImage.setImageResource(R.drawable.cultural);
+                break;
+            case "Entertainment":
+                holder.eventImage.setImageResource(R.drawable.entertainment);
+                break;
+            case "5G":
+                holder.eventImage.setImageResource(R.drawable.fiveg);
+                break;
+            case "App Dev":
+                holder.eventImage.setImageResource(R.drawable.mobileapp);
+                break;
+            case "WIC":
+                holder.eventImage.setImageResource(R.drawable.wic_holo);
+                break;
+            case "TISP":
+                holder.eventImage.setImageResource(R.drawable.tech);
+                break;
+            case "IOT":
+                holder.eventImage.setImageResource(R.drawable.iot);
+                break;
+            case "AI":
+                holder.eventImage.setImageResource(R.drawable.ai);
+                break;
+            case "ML":
+                holder.eventImage.setImageResource(R.drawable.ml3);
+                break;
+            case "Entrepreneurship":
+                holder.eventImage.setImageResource(R.drawable.entrepreneur);
+                break;
+            case "Closing Track":
+                holder.eventImage.setImageResource(R.drawable.closing);
+                break;
+            default:
+                holder.eventImage.setImageResource(R.drawable.baseline_event_black_48dp);
+                break;
+        }
         return convertView;
     }
     class ViewHolder{
